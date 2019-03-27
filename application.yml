@@ -3,6 +3,7 @@ server:
   servlet:
     context-path: /
 spring:
+  profiles: prod        #定义为生产环境
   datasource:
     #引入druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -15,7 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7000/eureka
+      defaultZone: http://localhost:7000/eureka,http://localhost:7001/eureka,http://localhost:7002/eureka
   instance:
     instance-id: provider-user-8000        #定义微服务的名称
     prefer-ip-address: true                #是否显示IP和端口
